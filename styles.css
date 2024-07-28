@@ -6,19 +6,18 @@ body {
 }
 
 .container {
-    position: relative;
-    width: 80%;
+    position: relative; /* Changed to relative */
+    width: 80%; /* Changed to percentage */
     height: 210px;
-    margin: 49px auto;
+    margin: 49px auto; /* Added margin to center horizontally */
     background-color: #281B3D;
     border-radius: 15px;
-    padding: 20px; /* Added padding for better spacing */
 }
 
 .container .top-left-image, .container .top-right-image {
     position: absolute;
     top: 0;
-    z-index: 1;
+    z-index: 1; /* Ensure images are above other content */
 }
 
 .container .top-left-image {
@@ -30,7 +29,7 @@ body {
 .container .top-right-image {
     right: 4px;
     width: 284px;
-    height: auto;
+    height: auto; /* Maintain aspect ratio */
 }
 
 .image {
@@ -86,9 +85,8 @@ body {
     column-gap: 20px;
     position: relative;
     width: 80%;
-    margin: 150px auto;
+    margin: 150px auto; /* Reduced margin from 299px to 150px */
 }
-
 .grid-item {
     background-color: #1E1E1E;
     border-radius: 15px;
@@ -136,13 +134,15 @@ body {
     left: 6em;
     width: 233px;
     height: 200px;
-    opacity: 0;
+    opacity: 0; /* Initially hidden */
     transition: opacity 0.3s ease;
 }
 
 .grid-item:hover .hover-image {
-    opacity: 1;
+    opacity: 1; /* Visible on hover */
 }
+
+/* Media queries */
 
 @media (max-width: 1200px) {
     .container {
@@ -213,7 +213,11 @@ body {
         font-size: 14px;
     }
 }
-
+@media (max-width: 768px) {
+    .grid-container {
+        margin: 100px auto; /* Reduced margin on smaller screens */
+    }
+}
 @media (max-width: 320px) {
     .container {
         padding: 5px;
