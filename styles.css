@@ -6,14 +6,14 @@ body {
 }
 
 .container {
-    position: absolute;
-    width: 1159px;
+    position: relative; /* Changed to relative */
+    width: 80%; /* Changed to percentage */
     height: 210px;
-    left: 160px;
-    top: 49px;
+    margin: 49px auto; /* Added margin to center horizontally */
     background-color: #281B3D;
     border-radius: 15px;
 }
+
 .container .top-left-image, .container .top-right-image {
     position: absolute;
     top: 0;
@@ -23,11 +23,11 @@ body {
 .container .top-left-image {
     left: 10px;
     width: 180px;
-    height: auto; /* Maintain aspect ratio */
+    height: auto;
 }
 
 .container .top-right-image {
-    left: 873px;
+    right: 4px;
     width: 284px;
     height: auto; /* Maintain aspect ratio */
 }
@@ -40,6 +40,7 @@ body {
     top: 55px;
     mix-blend-mode: pass-through;
 }
+
 .text {
     position: absolute;
     left: 300px;
@@ -48,12 +49,15 @@ body {
     font-weight: 824;
     line-height: 110px;
 }
+
 .text .road {
     color: white;
 }
+
 .text .rating {
     color: #6946A3;
 }
+
 .subtext {
     position: absolute;
     left: 302px;
@@ -62,24 +66,26 @@ body {
     letter-spacing: -2%;
     line-height: 120%;
 }
+
 .subtext .journey {
     font-family: 'Lao Sans Pro', sans-serif;
     color: white;
 }
+
 .subtext .made-easier {
     font-family: 'Lao Sans Pro', sans-serif;
     color: #676BE0;
 }
+
 .grid-container {
     display: grid;
-    grid-template-columns: repeat(2, 355px);
+    grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, 274px);
-    row-gap: 70px; /* Reduced gap between rows */
-    column-gap: 450px;
-    position: absolute;
-    left: 160px;
-    top: 299px;
-    width: 1159px;
+    row-gap: 70px;
+    column-gap: 20px;
+    position: relative;
+    width: 80%;
+    margin: 150px auto; /* Reduced margin from 299px to 150px */
 }
 .grid-item {
     background-color: #1E1E1E;
@@ -92,13 +98,16 @@ body {
     justify-content: flex-start;
     transition: transform 0.3s ease;
 }
+
 .grid-item:hover {
     transform: scale(1.05);
 }
+
 .grid-item img {
     width: 48px;
     height: 48px;
 }
+
 .grid-item .item-text {
     font-family: 'Lalezar', sans-serif;
     font-size: 16px;
@@ -108,6 +117,7 @@ body {
     width: 224px;
     height: 48px;
 }
+
 .grid-item .large-text {
     font-family: 'Lao Sans Pro', sans-serif;
     font-size: 14px;
@@ -117,10 +127,11 @@ body {
     width: 325px;
     height: 107px;
 }
+
 .grid-item .hover-image {
     position: absolute;
     top: 7px;
-    left: -0.834em;;
+    left: 6em;
     width: 233px;
     height: 200px;
     opacity: 0; /* Initially hidden */
@@ -129,4 +140,98 @@ body {
 
 .grid-item:hover .hover-image {
     opacity: 1; /* Visible on hover */
+}
+
+/* Media queries */
+
+@media (max-width: 1200px) {
+    .container {
+        width: 90%;
+    }
+    .grid-container {
+        width: 90%;
+    }
+}
+
+@media (max-width: 992px) {
+    .container {
+        width: 95%;
+    }
+    .grid-container {
+        width: 95%;
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        width: 100%;
+        height: auto;
+        padding: 20px;
+    }
+    .grid-container {
+        width: 100%;
+        grid-template-columns: repeat(1, 1fr);
+        padding: 20px;
+    }
+    .grid-item {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 576px) {
+    .container {
+        padding: 10px;
+    }
+    .grid-container {
+        padding: 10px;
+    }
+    .grid-item {
+        padding: 10px;
+    }
+    .text {
+        font-size: 48px;
+    }
+    .subtext {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        height: auto;
+    }
+    .image {
+        width: 50px;
+        height: 65px;
+    }
+    .text {
+        font-size: 36px;
+    }
+    .subtext {
+        font-size: 14px;
+    }
+}
+@media (max-width: 768px) {
+    .grid-container {
+        margin: 100px auto; /* Reduced margin on smaller screens */
+    }
+}
+@media (max-width: 320px) {
+    .container {
+        padding: 5px;
+    }
+    .grid-container {
+        padding: 5px;
+    }
+    .grid-item {
+        padding: 5px;
+    }
+    .text {
+        font-size: 24px;
+    }
+    .subtext {
+        font-size: 12px;
+    }
 }
