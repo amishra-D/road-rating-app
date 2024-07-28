@@ -6,30 +6,31 @@ body {
 }
 
 .container {
-    position: relative; /* Changed to relative */
-    width: 80%; /* Changed to percentage */
+    position: relative;
+    width: 80%;
     height: 210px;
-    margin: 49px auto; /* Added margin to center horizontally */
+    margin: 49px auto;
     background-color: #281B3D;
     border-radius: 15px;
+    padding: 20px; /* Added padding for better spacing */
 }
 
 .container .top-left-image, .container .top-right-image {
     position: absolute;
     top: 0;
-    z-index: 1; /* Ensure images are above other content */
+    z-index: 1;
 }
 
 .container .top-left-image {
     left: 10px;
     width: 180px;
-    height: auto; /* Maintain aspect ratio */
+    height: auto;
 }
 
 .container .top-right-image {
-    right: 4px; /* Changed to right */
+    right: 4px;
     width: 284px;
-    height: auto; /* Maintain aspect ratio */
+    height: auto;
 }
 
 .image {
@@ -85,8 +86,9 @@ body {
     column-gap: 20px;
     position: relative;
     width: 80%;
-    margin: 150px auto; /* Reduced margin from 299px to 150px */
+    margin: 150px auto;
 }
+
 .grid-item {
     background-color: #1E1E1E;
     border-radius: 15px;
@@ -134,15 +136,13 @@ body {
     left: 6em;
     width: 233px;
     height: 200px;
-    opacity: 0; /* Initially hidden */
+    opacity: 0;
     transition: opacity 0.3s ease;
 }
 
 .grid-item:hover .hover-image {
-    opacity: 1; /* Visible on hover */
+    opacity: 1;
 }
-
-/* Media queries */
 
 @media (max-width: 1200px) {
     .container {
@@ -213,11 +213,7 @@ body {
         font-size: 14px;
     }
 }
-@media (max-width: 768px) {
-    .grid-container {
-        margin: 100px auto; /* Reduced margin on smaller screens */
-    }
-}
+
 @media (max-width: 320px) {
     .container {
         padding: 5px;
