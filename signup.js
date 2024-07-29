@@ -1,4 +1,4 @@
-// Import Firebase libraries
+
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-app.js";
 import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-auth.js";
 
@@ -11,18 +11,14 @@ const firebaseConfig = {
     appId: "1:533342175725:web:ddbdfe015b4cf29fee67e4",
     measurementId: "G-XZHP8Q4FSB"
 };
-
-// Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 
-// Get elements
 const signupEmailIn = document.getElementById("email-signup");
 const signupPasswordIn = document.getElementById("password-signup");
 const confirmSignUpPasswordIn = document.getElementById("confirm-password-signup");
 const createacctbtn = document.getElementById("create-acct-btn");
 
-// Signup function
 createacctbtn.addEventListener("click", function() {
   var isVerified = true;
 
@@ -43,10 +39,9 @@ createacctbtn.addEventListener("click", function() {
   if (isVerified) {
     createUserWithEmailAndPassword(auth, signupEmail, signupPassword)
       .then((userCredential) => {
-        // Signed in
         const user = userCredential.user;
         window.alert("Success! Account created.");
-        window.location.href = 'login.html'; // Redirect to login.html after signup
+        window.location.href = 'login.html';
       })
       .catch((error) => {
         const errorCode = error.code;

@@ -111,6 +111,21 @@ body {
   cursor: pointer;
 }
 
+.signup-button {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  background-color: #A051E0;
+  color: white;
+  font-family: 'Bakbak One', sans-serif;
+  font-size: 20px;
+  border: 2px solid white;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  z-index: 2;
+}
+
 @media (max-width: 768px) {
   .container {
     width: 90%;

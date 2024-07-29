@@ -1,0 +1,223 @@
+body {
+  margin: 0;
+  font-family: 'Bakbak One', sans-serif;
+  background-color: #0F0918;
+  color: white;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  background-color: #281B3D;
+  padding: 10px 20px;
+  justify-content: space-between;
+}
+
+.profile {
+  font-family: 'Lalezar', sans-serif;
+  font-size: 24px;
+  margin-right: 20px;
+  flex-grow: 1;
+  color: white;
+}
+
+.separator {
+  border-left: 2px solid grey;
+  height: 40px;
+  margin: 0 20px;
+}
+
+.links {
+  display: flex;
+  flex: 1;
+  justify-content: space-around;
+  margin: 0 40px;
+}
+
+.nav-btn {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 18px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.nav-btn img {
+  width: 24px;
+  height: 24px;
+}
+
+.nav-btn.right {
+  margin-left: auto;
+}
+
+.navbar button {
+  background-color: transparent;
+  border: none;
+  color: white;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.navbar-dark {
+  color: black;
+}
+
+.navbar-dark .profile {
+  color: black;
+}
+
+.navbar-dark .links {
+  color: black;
+}
+
+.navbar-dark button {
+  color: black;
+}
+
+#map-container {
+  height: 400px;
+  margin: 20px auto;
+  padding: 10px;
+  width: calc(100% - 40px);
+  border: 2px solid #281B3D;
+  border-radius: 10px;
+  position: relative;
+}
+
+#map {
+  height: 100%;
+  border-radius: 10px;
+}
+
+#travel-btn-container {
+  position: absolute;
+  top: 60px;
+  right: 10px;
+  z-index: 1000;
+}
+
+#travel-btn {
+  background-color: #5a59b8;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#review-section {
+  margin: 20px auto;
+  width: calc(100% - 40px);
+  text-align: center;
+  color: #281B3D;
+  cursor: pointer;
+}
+
+#review-title {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+#review-fields {
+  display: none;
+  margin-top: 20px;
+}
+
+#review-fields label {
+  display: block;
+  margin: 10px 0 5px;
+}
+
+#review-fields input,
+#review-fields textarea {
+  display: block;
+  width: calc(100% - 40px);
+  margin: 10px auto;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  font-size: 16px;
+}
+
+#review-fields textarea {
+  height: 100px;
+}
+
+#review-fields input::placeholder,
+#review-fields textarea::placeholder {
+  color: #999;
+}
+
+#review-fields button {
+  display: block;
+  width: calc(100% - 40px);
+  margin: 10px auto;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #5a59b8;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+hr {
+  border: 1px solid grey;
+  margin: 20px auto;
+  width: 80%;
+  max-width: 400px;
+}
+
+#reviews-section {
+  margin-top: 20px;
+  width: calc(100% - 40px);
+  margin: 20px auto;
+}
+
+.review-card {
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 10px;
+  margin-bottom: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  color: black;
+}
+
+.review-header {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.review-body {
+  margin-left: 10px;
+}
+
+.review-rating, .review-text {
+  font-family: 'Lao Sans Pro', sans-serif;
+}
+
+.review-rating {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.review-text {
+  margin-bottom: 10px;
+}
+
+.leaflet-routing-container {
+  color: black;
+}
+
+.leaflet-routing-waypoint, .leaflet-routing-alt {
+  color: black;
+}
+
+.leaflet-routing-instructions {
+  color: black;
+}

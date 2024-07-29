@@ -2,7 +2,6 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-app.js";
 import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-auth.js";
 
-// Firebase configuration
 const firebaseConfig = {
     apiKey: "AIzaSyC7JHspwqzdDEhiXx6pEhGFoUS9wl3c03o",
     authDomain: "acclone.firebaseapp.com",
@@ -13,16 +12,13 @@ const firebaseConfig = {
     measurementId: "G-XZHP8Q4FSB"
 };
 
-// Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 
-// Get elements
 const emailLoginIn = document.getElementById("email-login");
 const passwordLoginIn = document.getElementById("password-login");
 const loginBtn = document.getElementById("login-btn");
 
-// Login function
 loginBtn.addEventListener("click", function() {
   const loginEmail = emailLoginIn.value;
   const loginPassword = passwordLoginIn.value;
@@ -37,7 +33,12 @@ loginBtn.addEventListener("click", function() {
       // Signed in
       const user = userCredential.user;
       window.alert("Success! Welcome back!");
-      window.location.href = 'index.html'; // Redirect to index.html after login
+
+      // Store the email in local storage
+      localStorage.setItem('userEmail', loginEmail);
+
+      // Redirect to index.html after login
+      window.location.href = 'home.html'; 
     })
     .catch((error) => {
       const errorCode = error.code;

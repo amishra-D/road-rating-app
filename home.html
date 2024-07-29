@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Navigation Page with Map</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bakbak+One&family=Lalezar&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="home.css">
+
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.css" />
+
+  <link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine/dist/leaflet-routing-machine.css" />
+</head>
+<body>
+  <div class="navbar">
+    <div class="profile" id="profile-name">Your Profile</div>
+    <div class="separator"></div>
+    <div class="links">
+      <button class="nav-btn" onclick="location.href='home.html'">
+        <img src="Assets/Home.png" alt="Home"> Home
+      </button>
+      <button class="nav-btn" onclick="location.href='index.html'">
+        <img src="Assets/Info.png" alt="About Us"> About Us
+      </button>
+      <button class="nav-btn" onclick="showContent('history')">
+        <img src="Assets/Clock.png" alt="History"> History
+      </button>
+    </div>
+    <div class="separator"></div>
+    <button class="nav-btn right" onclick="location.href='Login.html'">Sign Up/Login</button>
+  </div>
+
+  <div id="map-container">
+    <div id="map"></div>
+    <div id="travel-btn-container">
+      <button id="travel-btn">Travel</button>
+    </div>
+  </div>
+  <div id="review-section">
+    <div id="review-title">Add a review</div>
+    <div id="review-fields">
+      <form id="review-form">
+        <label for="rating">Rating:</label>
+        <input type="number" id="RatingBox" name="rating" min="1" max="5" placeholder="Enter your rating" required>
+
+        <label for="source">Source:</label>
+        <input type="text" id="SourceBox" name="source" placeholder="Enter source location" required>
+
+        <label for="destination">Destination:</label>
+        <input type="text" id="DestinationBox" name="destination" placeholder="Enter destination location" required>
+
+        <label for="review">Review:</label>
+        <textarea id="ReviewBox" name="review" rows="4" placeholder="Write your review here" required></textarea>
+
+        <button type="submit" id="Insbtn">Submit</button>
+      </form>
+    </div>
+    <hr>
+  </div>
+  <div id="reviews-section">
+    <h2>All Reviews</h2>
+    <div id="reviews"></div>
+  </div>
+
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+  <script src="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.js"></script>
+
+  <script src="https://unpkg.com/leaflet-routing-machine/dist/leaflet-routing-machine.js"></script>
+  <script src="script.js"></script>
+  <script src="firebase.js" type="module"></script>
+</body>
+</html>
