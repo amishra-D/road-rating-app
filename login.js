@@ -30,14 +30,10 @@ loginBtn.addEventListener("click", function() {
 
   signInWithEmailAndPassword(auth, loginEmail, loginPassword)
     .then((userCredential) => {
-      // Signed in
       const user = userCredential.user;
       window.alert("Success! Welcome back!");
 
-      // Store the email in local storage
       localStorage.setItem('userEmail', loginEmail);
-
-      // Redirect to index.html after login
       window.location.href = 'home.html'; 
     })
     .catch((error) => {

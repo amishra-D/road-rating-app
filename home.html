@@ -6,10 +6,8 @@
   <title>Navigation Page with Map</title>
   <link href="https://fonts.googleapis.com/css2?family=Bakbak+One&family=Lalezar&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="home.css">
-
   <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
   <link rel="stylesheet" href="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.css" />
-
   <link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine/dist/leaflet-routing-machine.css" />
 </head>
 <body>
@@ -28,7 +26,7 @@
       </button>
     </div>
     <div class="separator"></div>
-    <button class="nav-btn right" onclick="location.href='Login.html'">Sign Up/Login</button>
+    <button class="nav-btn right" id="login-btn" onclick="location.href='login.html'">Sign Up/Login</button>
   </div>
 
   <div id="map-container">
@@ -37,6 +35,7 @@
       <button id="travel-btn">Travel</button>
     </div>
   </div>
+  
   <div id="review-section">
     <div id="review-title">Add a review</div>
     <div id="review-fields">
@@ -58,15 +57,26 @@
     </div>
     <hr>
   </div>
+
   <div id="reviews-section">
     <h2>All Reviews</h2>
-    <div id="reviews"></div>
+    <div id="reviews">
+      <!-- Sample Review Card -->
+      <div class="review-card">
+        <div class="review-header">
+          <span class="username">Username</span>
+          <span class="source-destination">Source - Destination</span>
+        </div>
+        <div class="review-body">
+          <div class="review-rating">Rating: 5</div>
+          <div class="review-text">This is a sample review text.</div>
+        </div>
+      </div>
+    </div>
   </div>
 
   <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-
   <script src="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.js"></script>
-
   <script src="https://unpkg.com/leaflet-routing-machine/dist/leaflet-routing-machine.js"></script>
   <script src="script.js"></script>
   <script src="firebase.js" type="module"></script>
