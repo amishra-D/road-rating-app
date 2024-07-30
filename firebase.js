@@ -1,6 +1,5 @@
-
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.4/firebase-app.js";
-import { getFirestore, collection, addDoc, getDocs, query, where, updateDoc, deleteDoc } from "https://www.gstatic.com/firebasejs/10.12.4/firebase-firestore.js";
+import { getFirestore, collection, addDoc, getDocs } from "https://www.gstatic.com/firebasejs/10.12.4/firebase-firestore.js";
 
 const firebaseConfig = {
   apiKey: "AIzaSyCVZ3kQQlXCqFNF8n95CnSucIILjrJKw6Q",
@@ -20,16 +19,21 @@ const SourceBox = document.getElementById("SourceBox");
 const DestinationBox = document.getElementById("DestinationBox");
 const Insbtn = document.getElementById("Insbtn");
 const reviewsDiv = document.getElementById("reviews");
+
 async function addReview(event) {
   event.preventDefault();
-  if (!ProfileNameBox.textContent.trim()) {
+  const profileName = ProfileNameBox.textContent.trim();
+  const profilePicture = localStorage.getItem('profilePicture');
+  
+  if (!profileName) {
     alert("Profile name is empty");
     return;
   }
 
   try {
     await addDoc(collection(db, "roadratings"), {
-      ProfileName: ProfileNameBox.textContent.trim(),
+      ProfileName: profileName,
+      ProfilePicture: profilePicture, // Store the profile picture URL
       Rating: RatingBox.value,
       Review: ReviewBox.value,
       Source: SourceBox.value,
@@ -50,6 +54,7 @@ async function displayAllReviews() {
     const reviewHtml = `
       <div class="review-card">
         <div class="review-header">
+          <img src="${data.ProfilePicture || 'default-profile-pic.png'}" alt="Profile Picture" class="profile-picture">
           <strong>${data.ProfileName}</strong> | ${data.Source} | ${data.Destination}
         </div>
         <div class="review-body">

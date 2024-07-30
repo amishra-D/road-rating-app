@@ -34,7 +34,7 @@ loginBtn.addEventListener("click", function() {
       window.alert("Success! Welcome back!");
 
       localStorage.setItem('userEmail', loginEmail);
-      window.location.href = 'home.html'; 
+      window.location.href = 'pfpname.html'; 
     })
     .catch((error) => {
       const errorCode = error.code;

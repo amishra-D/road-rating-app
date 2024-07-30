@@ -212,28 +212,39 @@ hr {
   padding: 10px;
   margin-bottom: 10px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+}
+
+.review-card img.profile-picture {
+  width: 30px; /* Adjust the width as needed */
+  height: 30px; /* Adjust the height as needed */
+  border-radius: 50%; /* Ensure it remains circular */
+  margin-right: 10px; /* Space between image and text */
 }
 
 .review-header {
+  display: flex;
+  align-items: center; /* Align items vertically center */
   margin-bottom: 5px;
   font-family: 'Lalezar', sans-serif;
   color: white;
-  font-weight: normal; /* Adjust font weight here for less bold */
+  font-weight: normal;
 }
 
-.username {
-  display: inline-block;
-  font-weight: normal; /* Less bold */
+.review-header .username {
+  font-weight: normal;
+  margin-right: 10px; /* Space between profile name and other elements */
 }
 
-.source-destination {
-  display: inline-block;
+.review-header .source-destination {
   margin-left: 10px;
-  font-weight: normal; /* Less bold */
+  font-weight: normal;
+  margin-right: 10px; /* Space between source and destination */
 }
 
 .review-body {
-  margin-left: 10px;
+  margin-left: 40px; /* Adjust to fit the layout */
 }
 
 .review-rating, .review-text {
