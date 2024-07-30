@@ -17,6 +17,8 @@ body {
   transform: translate(-50%, -50%);
   z-index: 0;
   mix-blend-mode: saturation;
+  background-size: cover; /* Ensures the background image covers the entire container */
+  background-position: center center; /* Centers the background image */
 }
 
 .container {
@@ -31,7 +33,7 @@ body {
   z-index: 1;
   border-radius: 33px;
   overflow: hidden;
-  padding: 20px;
+  padding: 20px 40px; /* Added left and right padding */
 }
 
 .container h1 {
@@ -111,26 +113,62 @@ body {
   cursor: pointer;
 }
 
-.signup-button {
+.login-button {
   position: absolute;
-  bottom: 20px;
-  right: 20px;
+  bottom: 74px; /* Distance from the bottom edge, above the signup button */
+  right: 20px; /* Distance from the right edge */
+  width: 120px;
+  height: 44px;
   background-color: #A051E0;
   color: white;
   font-family: 'Bakbak One', sans-serif;
   font-size: 20px;
   border: 2px solid white;
   border-radius: 5px;
-  padding: 10px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   cursor: pointer;
-  z-index: 2;
+}
+
+.signup-button {
+  position: absolute; /* Position absolutely within the container */
+  bottom: 20px; /* Distance from the bottom edge */
+  right: 20px; /* Distance from the right edge */
+  width: 120px;
+  height: 44px;
+  background-color: #A051E0;
+  color: white;
+  font-family: 'Bakbak One', sans-serif;
+  font-size: 20px;
+  border: 2px solid white;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+@media (max-width: 1200px) {
+  .background-image {
+    background-size: cover; /* Adjust size for large screens */
+  }
+}
+
+@media (max-width: 992px) {
+  .background-image {
+    background-size: cover; /* Adjust size for medium screens */
+  }
 }
 
 @media (max-width: 768px) {
+  .background-image {
+    background-size: cover; /* Adjust size for tablets */
+  }
   .container {
     width: 90%;
     height: auto;
-    padding: 20px;
+    padding: 20px 20px; /* Adjusted padding for smaller screens */
   }
   .middle-image {
     position: relative;
@@ -144,25 +182,74 @@ body {
 }
 
 @media (max-width: 480px) {
+  .background-image {
+    background-size: cover; /* Adjust size for mobile screens */
+  }
   .container {
     width: 100%;
-    padding: 10px;
+    padding: 10px 10px; /* Adjusted padding for very small screens */
   }
   .input-container input {
     height: 40px;
     font-size: 16px;
   }
-  .button-container {
-    width: 100px;
-    height: 34px;
-  }
-  .button {
-    width: 90px;
-    height: 24px;
-    font-size: 16px;
+  .middle-image {
+    height: 160px;
+    width: auto;
+    top: 7.5px;
+    left: auto;
   }
   .container h1 {
-    font-size: 48px;
+    font-family: 'Anton', sans-serif;
+    font-size: 20px;
+    color: white;
+    margin-top: -9px;
+  }
+  .button-container {
+    width: 90px;
+    height: 24px;
+  }
+  .button {
+    height: 24px;
+    width: 90px;
+    font-size: 13px;
+  }
+  .login-button {
+    width: 120px;
+    height: 44px;
+    background-color: #A051E0;
+    color: white;
+    font-family: 'Bakbak One', sans-serif;
+    font-size: 20px;
+    border: 2px solid white;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    bottom: 64px; /* Adjusted distance from the bottom edge for smaller screens */
+  }
+  .signup-button {
+    width: 120px;
+    height: 44px;
+    background-color: #A051E0;
+    color: white;
+    font-family: 'Bakbak One', sans-serif;
+    font-size: 20px;
+    border: 2px solid white;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+  .container h1 {
+    font-size: 30px;
+  }
+  #signup-btn {
+    width: 90px;
+    height: 24px;
+    font-size: 13px;
   }
   .input-container label {
     font-size: 20px;
