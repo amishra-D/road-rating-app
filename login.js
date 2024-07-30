@@ -1,15 +1,14 @@
-// Import Firebase libraries
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-app.js";
 import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-auth.js";
 
 const firebaseConfig = {
-    apiKey: "AIzaSyC7JHspwqzdDEhiXx6pEhGFoUS9wl3c03o",
-    authDomain: "acclone.firebaseapp.com",
-    projectId: "acclone",
-    storageBucket: "acclone.appspot.com",
-    messagingSenderId: "533342175725",
-    appId: "1:533342175725:web:ddbdfe015b4cf29fee67e4",
-    measurementId: "G-XZHP8Q4FSB"
+  apiKey: "AIzaSyC7JHspwqzdDEhiXx6pEhGFoUS9wl3c03o",
+  authDomain: "acclone.firebaseapp.com",
+  projectId: "acclone",
+  storageBucket: "acclone.appspot.com",
+  messagingSenderId: "533342175725",
+  appId: "1:533342175725:web:ddbdfe015b4cf29fee67e4",
+  measurementId: "G-XZHP8Q4FSB"
 };
 
 const app = initializeApp(firebaseConfig);
@@ -23,20 +22,26 @@ loginBtn.addEventListener("click", function() {
   const loginEmail = emailLoginIn.value;
   const loginPassword = passwordLoginIn.value;
 
-  if (!loginEmail || !loginPassword) {
+  if (!loginEmail ||!loginPassword) {
     window.alert("Please fill out all required fields.");
     return;
   }
 
   signInWithEmailAndPassword(auth, loginEmail, loginPassword)
-    .then((userCredential) => {
+   .then((userCredential) => {
       const user = userCredential.user;
       window.alert("Success! Welcome back!");
 
-      localStorage.setItem('userEmail', loginEmail);
-      window.location.href = 'pfname.html'; 
+      const isFirstLogin =!localStorage.getItem('hasLoggedInBefore');
+      localStorage.setItem('hasLoggedInBefore', true);
+
+      if (isFirstLogin) {
+        window.location.href = 'pfname.html';
+      } else {
+        window.location.href = 'home.html';
+      }
     })
-    .catch((error) => {
+   .catch((error) => {
       const errorCode = error.code;
       const errorMessage = error.message;
       console.error("Error during login:", errorCode, errorMessage);
