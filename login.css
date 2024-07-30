@@ -33,7 +33,7 @@ body {
   z-index: 1;
   border-radius: 33px;
   overflow: hidden;
-  padding: 20px 40px; /* Added left and right padding */
+  padding: 20px 40px; 
 }
 
 .container h1 {

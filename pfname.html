@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profile Name</title>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Archivo&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bakbak+One&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="pfname.css">
+</head>
+<body>
+  <img src="Assets/f3a49886604947f05d63f9868ddc7747.jpg" class="background-image" alt="Background Image">
+  <div class="container">
+    <form class="form-section" id="profile-form">
+      <input type="file" id="file-upload" class="hidden-file-input" accept="image/*">
+      <img src="Assets/1.png" alt="Profile Picture" id="profile-pic" class="center-image">
+      <div class="input-container">
+        <label for="Name">Name</label>
+        <input type="text" id="Name" name="name" required>
+      </div>
+      <button type="submit" class="submit-button">
+        Submit
+      </button>
+    </form>
+  </div>
+
+  <script>
+    // JavaScript to handle image click event and file upload
+    document.getElementById('profile-pic').addEventListener('click', function() {
+      document.getElementById('file-upload').click();
+    });
+
+    document.getElementById('file-upload').addEventListener('change', function(event) {
+      const file = event.target.files[0];
+      if (file) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+          document.getElementById('profile-pic').src = e.target.result;
+        };
+        reader.readAsDataURL(file);
+      }
+    });
+
+    document.getElementById('profile-form').addEventListener('submit', function(event) {
+      event.preventDefault(); // Prevent default form submission
+      const formData = new FormData(this);
+      const name = formData.get('name');
+      const file = document.getElementById('file-upload').files[0];
+
+      // Create a local storage object to store user data
+      if (file && name) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+          localStorage.setItem('profilePicture', e.target.result);
+          localStorage.setItem('profileName', name);
+          alert('Profile updated successfully!');
+          window.location.href = 'home.html'; // Redirect to home.html
+        };
+        reader.readAsDataURL(file);
+      } else {
+        alert('Please fill out all fields.');
+      }
+    });
+  </script>
+</body>
+</html>
