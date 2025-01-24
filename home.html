@@ -55,8 +55,12 @@
 
         <label for="review">Review:</label>
         <textarea id="ReviewBox" name="review" rows="4" placeholder="Write your review here" required></textarea>
-
-        <button type="submit" id="Insbtn">Submit</button>
+        <div class="button-container">
+          <button type="submit" id="Insbtn">Submit</button>
+          <button class="cancel-btn" onclick="cancelReview()">Cancel</button>
+        </div>
+        
+        
       </form>
     </div>
     <hr>

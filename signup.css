@@ -171,6 +171,9 @@ body {
 }
 
 @media (max-width: 576px) {
+  .container h1 {
+    font-size: 48px;
+  }
   .input-container label {
     font-size: 18px;
   }
@@ -215,6 +218,9 @@ body {
 }
 
 @media (max-width: 320px) {
+  .container h1 {
+    font-size: 36px;
+  }
   .input-container label {
     font-size: 14px;
   }

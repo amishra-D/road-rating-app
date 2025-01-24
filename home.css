@@ -181,6 +181,36 @@ hr {
   width: 80%;
   max-width: 400px;
 }
+.button-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.submit-btn, .cancel-btn {
+  width: 48%;
+  padding: 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.submit-btn {
+  background-color: #A051E0; /* Purple color */
+  color: white;
+}
+
+.cancel-btn {
+  background-color: #FF5733; /* Red color */
+  color: white;
+}
+
+.submit-btn:hover, .cancel-btn:hover {
+  opacity: 0.8;
+}
 
 #reviews-section {
   margin-top: 20px;
@@ -215,12 +245,19 @@ hr {
   display: flex;
   flex-direction: column;
 }
+.delete-icon {
+  width: 35px;
+  height: 35px;
+  cursor: pointer;
+  margin-left: auto;
+  display: inline-block;
+}
 
 .review-card img.profile-picture {
-  width: 30px; /* Adjust the width as needed */
-  height: 30px; /* Adjust the height as needed */
-  border-radius: 50%; /* Ensure it remains circular */
-  margin-right: 10px; /* Space between image and text */
+  width: 30px; 
+  height: 30px; 
+  border-radius: 50%; 
+  margin-right: 10px;
 }
 
 .review-header {

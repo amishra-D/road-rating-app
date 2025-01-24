@@ -49,7 +49,7 @@
       const file = document.getElementById('file-upload').files[0];
 
       // Create a local storage object to store user data
-      if (file && name) {
+      if (file && name || name) {
         const reader = new FileReader();
         reader.onload = function(e) {
           localStorage.setItem('profilePicture', e.target.result);
